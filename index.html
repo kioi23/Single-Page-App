@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VibeSync</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+
+  <!-- HEADER -->
+  <header class="p-4 text-center text-2xl font-bold">
+    🎧 VibeSync
+  </header>
+
+  <!-- MOOD INPUT -->
+  <section class="p-4 text-center">
+    <select id="moodSelect" class="p-2 text-black">
+      <option value="">Select Mood</option>
+      <option value="happy">Happy</option>
+      <option value="sad">Sad</option>
+      <option value="chill">Chill</option>
+      <option value="focus">Focus</option>
+      <option value="energy">Energetic</option>
+    </select>
+
+    <button id="searchBtn" class="bg-red-500 px-4 py-2 ml-2">
+      Find Music
+    </button>
+  </section>
+
+  <!-- RESULTS -->
+  <main id="results" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></main>
+
+  <script src="api.js"></script>
+  <script src="ui.js"></script>
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
