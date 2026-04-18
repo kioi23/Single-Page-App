@@ -1,7 +1,8 @@
-export function saveSong(songName) {
-  let saved = JSON.parse(localStorage.getItem("songs")) || [];
+// Save song to localStorage
+export function saveSong(name) {
+  let songs = JSON.parse(localStorage.getItem("songs")) || [];
 
-  saved.push(songName);
+  songs.push(name);
 
-  localStorage.setItem("songs", JSON.stringify(saved));
+  localStorage.setItem("songs", JSON.stringify(songs));
 }

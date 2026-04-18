@@ -8,32 +8,33 @@
 
 <body class="bg-black text-white">
 
-  <!-- HEADER -->
-  <header class="p-4 text-center text-2xl font-bold">
-    🎧 VibeSync
-  </header>
+<header class="p-4 text-center text-2xl font-bold">
+  🎧 VibeSync
+  <a href="saved.html" class="text-sm ml-4 text-red-400">Saved Songs</a>
+</header>
 
-  <!-- MOOD INPUT -->
-  <section class="p-4 text-center">
-    <select id="moodSelect" class="p-2 text-black">
-      <option value="">Select Mood</option>
-      <option value="happy">Happy</option>
-      <option value="sad">Sad</option>
-      <option value="chill">Chill</option>
-      <option value="focus">Focus</option>
-      <option value="energy">Energetic</option>
-    </select>
+<section class="p-4 text-center">
+  <select id="moodSelect" class="p-2 text-black">
+    <option value="">Select Mood</option>
+    <option value="happy">Happy</option>
+    <option value="sad">Sad</option>
+    <option value="chill">Chill</option>
+    <option value="focus">Focus</option>
+    <option value="energy">Energetic</option>
+  </select>
 
-    <button id="searchBtn" class="bg-red-500 px-4 py-2 ml-2">
-      Find Music
-    </button>
-  </section>
+  <button id="searchBtn" class="bg-red-500 px-4 py-2 ml-2">
+    Find Music
+  </button>
+</section>
 
-  <!-- RESULTS -->
-  <main id="results" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></main>
+<!-- Loading / Error -->
+<p id="statusMsg" class="text-center"></p>
 
+<main id="results" class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4"></main>
 
-  <script type="module" src="app.js"></script>
+<!-- Only ONE script with module -->
+<script type="module" src="app.js"></script>
 
 </body>
 </html>

@@ -1,14 +1,12 @@
-// Function to fetch songs from iTunes API
-export async function fetchSongs(moodKeyword) {
-
+// Fetch songs from iTunes API
+export async function fetchSongs(keyword) {
   try {
     const response = await fetch(
-      `https://itunes.apple.com/search?term=${moodKeyword}&media=music&limit=12`
+      `https://itunes.apple.com/search?term=${keyword}&media=music&limit=12`
     );
 
-    // Check if request was successful
     if (!response.ok) {
-      throw new Error("API request failed");
+      throw new Error("API failed");
     }
 
     const data = await response.json();
@@ -16,7 +14,7 @@ export async function fetchSongs(moodKeyword) {
     return data.results;
 
   } catch (error) {
-    console.error("Fetch error:", error);
-    return []; // fallback empty array
+    console.error(error);
+    return [];
   }
 }
