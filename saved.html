@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saved Songs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white">
+
+<header class="p-4 text-center text-2xl">
+  ❤️ Saved Songs
+  <a href="index.html" class="text-sm ml-4 text-red-400">Back</a>
+</header>
+
+<main id="savedList" class="p-4"></main>
+
+<script src="storage.js"></script>
+<script>
+  // Load saved songs
+  const saved = JSON.parse(localStorage.getItem("songs")) || [];
+  const container = document.getElementById("savedList");
+
+  if (saved.length === 0) {
+    container.innerHTML = "<p>No saved songs yet.</p>";
+  } else {
+    saved.forEach(song => {
+      const div = document.createElement("div");
+      div.textContent = song;
+      container.appendChild(div);
+    });
+  }
+</script>
+
+</body>
+</html>
